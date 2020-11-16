@@ -34,4 +34,9 @@ public class ToOtherScene : MonoBehaviour
     {
         SceneManager.LoadScene("MyPageScene");
     }
+
+    public void GoStock()
+    {
+        SceneManager.LoadScene("StockScene");
+    }
 }
