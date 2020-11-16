@@ -9,6 +9,9 @@ public class StartGame : MonoBehaviour
 {
     public InputField inputID;
     public InputField inputPW;
+    public GameObject playerStatus;
+
+    public StatusManagerStart sm;
 
     string id;
     string pw;
@@ -32,15 +35,24 @@ public class StartGame : MonoBehaviour
         id = inputID.text;
         pw = inputPW.text;
 
+
+
         StartCoroutine(ReqeustSignIn());
 
-
+        
 
     }
 
     public void ChangeSceneToGameForTest()
     {
-        SceneManager.LoadScene("GameScene");
+
+        // sm = GameObject.Find("StatusManagerStart").GetComponent<StatusManagerStart>();
+        sm = playerStatus.GetComponent<StatusManagerStart>();
+        Debug.Log("heh");
+        string user_pk = "1";
+        sm.user_pk = user_pk;
+        sm.Call();
+        //SceneManager.LoadScene("GameScene");
     }
 
     public void ChangeSceneToSignUp()
@@ -69,7 +81,12 @@ public class StartGame : MonoBehaviour
             Debug.Log("Form upload complete!");
             string result = webRequest.downloadHandler.text;
             Debug.Log("Response: " + result);
-            SceneManager.LoadScene("GameScene");
+
+            string user_pk = "1";
+            sm.user_pk = user_pk;
+            sm.Call();
+            // DontDestroyOnLoad(PlayerStatus);
+            // SceneManager.LoadScene("GameScene");
         }
 
     }
