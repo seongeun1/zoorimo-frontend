@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MyPageScene.unity
     guid: a22cc2ee92e1700468593d5191c95bc1
+  - enabled: 1
+    path: Assets/Scenes/SignUpScene.unity
+    guid: 559d10f23488cf84899610f0f120f884
   m_configObjects: {}
